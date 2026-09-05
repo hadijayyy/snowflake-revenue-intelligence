@@ -1,4 +1,4 @@
 scenario,threshold_usd_b,interpretation,leadership_action,owner
-below_forecast,<1.588,Reported result is below the official range,Revisit usage pipeline hiring and resource assumptions,Finance + Sales
-within_forecast,1.588 to 1.593,Reported result is within the official range,Stay with the company-led operating plan,Finance + Operations
-above_forecast,>1.593,Reported result is above the official range,Test whether acceleration is repeatable before resetting the baseline,Finance + Operations
+below_forecast,<1.588,Hypothetical Q3 result below official guidance,Review usage and renewals; revisit discretionary spend if the shortfall persists,Finance + Sales
+within_forecast,1.588 to 1.593 inclusive,Hypothetical Q3 result within official guidance,Keep the reference plan and review usage renewals and margins,Finance + Operations
+above_forecast,>1.593,Hypothetical Q3 result above official guidance,Test repeatability and margins before raising fixed costs,Finance + Operations
