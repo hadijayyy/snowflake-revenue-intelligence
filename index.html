@@ -2523,6 +2523,33 @@
     .platform-context img { opacity: .7; filter: saturate(.68) contrast(1.04); }
     .platform-context figcaption { margin-top: 8px; font-size: 9px; }
 
+    .platform-signal-frame {
+      display: grid;
+      gap: 7px;
+      padding: 14px 15px 10px;
+      aspect-ratio: 2.15 / 1;
+      background: #0b2735;
+    }
+
+    .platform-signal-frame::after { display: none; }
+    .platform-signal-heading { display: flex; justify-content: space-between; gap: 12px; color: #9fb9c2; font-size: 8px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .platform-signal-heading strong { color: #f8fdfe; font-weight: 800; }
+    .platform-signal-chart { display: block; width: 100%; height: auto; overflow: visible; }
+    .platform-signal-grid { stroke: rgba(190, 227, 236, .16); stroke-width: 1; }
+    .platform-signal-baseline { stroke: rgba(255, 255, 255, .34); stroke-width: 1; stroke-dasharray: 4 5; }
+    .platform-signal-axis { fill: #77939d; font-size: 9px; }
+    .platform-signal-line { fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 3; }
+    .platform-signal-line.revenue { stroke: #36c0ec; }
+    .platform-signal-line.contract { stroke: #d7b66c; }
+    .platform-signal-dot { stroke: #0b2735; stroke-width: 2; }
+    .platform-signal-dot.revenue { fill: #36c0ec; }
+    .platform-signal-dot.contract { fill: #d7b66c; }
+    .platform-signal-legend { display: flex; justify-content: space-between; gap: 14px; color: #b8cbd0; font-size: 8px; line-height: 1.3; }
+    .platform-signal-legend span { display: inline-flex; align-items: center; gap: 5px; }
+    .platform-signal-legend i { width: 6px; height: 6px; display: inline-block; border-radius: 50%; }
+    .platform-signal-legend .revenue i { background: #36c0ec; }
+    .platform-signal-legend .contract i { background: #d7b66c; }
+
     .evidence-strip {
       border-top-color: rgba(7, 28, 42, .18);
       border-bottom-color: rgba(7, 28, 42, .18);
@@ -3334,10 +3361,26 @@
               <div><span>What to watch</span><strong>Q3 result</strong></div>
             </div>
             <figure class="platform-context">
-              <div class="platform-context-frame">
-                <img src="https://www.snowflake.com/adobe/dynamicmedia/deliver/dm-aid--3be4db83-f169-4b6e-b820-290454abc04e/agents-coco-hp.png?preferwebp=true&quality=75" alt="Snowflake product interface showing Cortex Code and Snowflake CoWork" width="1200" height="686" fetchpriority="high" decoding="async">
+              <div class="platform-context-frame platform-signal-frame">
+                <div class="platform-signal-heading"><span>Q1 FY27 indexed signal <strong>100</strong></span><span>Q2 FY27</span></div>
+                <svg class="platform-signal-chart" viewBox="0 0 600 142" role="img" aria-labelledby="hero-signal-title hero-signal-desc">
+                  <title id="hero-signal-title">Revenue and contracted future revenue indexed to Q1 FY27</title>
+                  <desc id="hero-signal-desc">Product revenue rises to 111.8 while contracted future revenue falls to 97.8 in Q2 FY27.</desc>
+                  <line class="platform-signal-grid" x1="28" y1="26" x2="570" y2="26"></line>
+                  <line class="platform-signal-baseline" x1="28" y1="71" x2="570" y2="71"></line>
+                  <line class="platform-signal-grid" x1="28" y1="116" x2="570" y2="116"></line>
+                  <text class="platform-signal-axis" x="2" y="30">120</text>
+                  <text class="platform-signal-axis" x="7" y="75">100</text>
+                  <text class="platform-signal-axis" x="10" y="120">80</text>
+                  <path class="platform-signal-line revenue" d="M40 103 L171 92 L302 81 L433 71 L564 44"></path>
+                  <path class="platform-signal-line contract" d="M40 110 L171 91 L302 56 L433 71 L564 76"></path>
+                  <circle class="platform-signal-dot revenue" cx="40" cy="103" r="4"></circle><circle class="platform-signal-dot revenue" cx="171" cy="92" r="4"></circle><circle class="platform-signal-dot revenue" cx="302" cy="81" r="4"></circle><circle class="platform-signal-dot revenue" cx="433" cy="71" r="4"></circle><circle class="platform-signal-dot revenue" cx="564" cy="44" r="5"></circle>
+                  <circle class="platform-signal-dot contract" cx="40" cy="110" r="4"></circle><circle class="platform-signal-dot contract" cx="171" cy="91" r="4"></circle><circle class="platform-signal-dot contract" cx="302" cy="56" r="4"></circle><circle class="platform-signal-dot contract" cx="433" cy="71" r="4"></circle><circle class="platform-signal-dot contract" cx="564" cy="76" r="5"></circle>
+                  <text class="platform-signal-axis" x="30" y="137">Q2 FY26</text><text class="platform-signal-axis" x="151" y="137">Q3</text><text class="platform-signal-axis" x="286" y="137">Q4</text><text class="platform-signal-axis" x="418" y="137">Q1 FY27</text><text class="platform-signal-axis" x="545" y="137">Q2</text>
+                </svg>
+                <div class="platform-signal-legend"><span class="revenue"><i></i>Product revenue · 111.8</span><span class="contract"><i></i>Contracted revenue · 97.8</span></div>
               </div>
-                <figcaption><span>Snowflake product context</span><a href="https://www.snowflake.com/en/" target="_blank" rel="noopener noreferrer">Official source ↗</a></figcaption>
+              <figcaption><span>Indexed signal · Q1 FY27 = 100</span><a href="https://investors.snowflake.com/files/doc_financials/2027/q2/Q2-FY2027-Investor-Presentation_vF.pdf" target="_blank" rel="noopener noreferrer">Official source ↗</a></figcaption>
             </figure>
           </aside>
         </div>
