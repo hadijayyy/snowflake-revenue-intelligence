@@ -29,6 +29,17 @@ Use Snowflake's company forecast range of **$1.588–1.593B** as the FY27 Q3 pla
 - Turning a signal into ranked priorities, owners, and decision triggers.
 - Making sources, assumptions, validation, and limitations visible.
 
+## Technical proof
+
+The repository is intentionally inspectable rather than a screenshot-only showcase:
+
+- `technical/analysis.sql` reproduces the sequential-growth, year-over-year, Q1-index, and scenario calculations from the snapshot.
+- `artifacts/fy27-q2-metric-snapshot.csv` is the normalized metric input used by the analysis.
+- `artifacts/forecast-scenarios.csv` makes the actual, company forecast, and independent estimate explicit as different evidence types.
+- `technical/architecture.md` documents the source-to-decision flow and the production extension path.
+
+The SQL uses an inline `VALUES` block so it can be inspected or run without credentials. In a production setting, that block would be replaced by a governed warehouse table and scheduled validation checks.
+
 ## Project metadata
 
 | Field | Detail |
@@ -51,11 +62,14 @@ Ryan's broader analytics toolkit includes SQL, Python, Power BI, Tableau, and Ex
 ├── index.html
 ├── README.md
 ├── technical/
+│   ├── analysis.sql
+│   ├── architecture.md
 │   ├── decision-logic.md
 │   ├── metric-definitions.md
 │   └── methodology.md
 └── artifacts/
     ├── decision-triggers.csv
+    ├── forecast-scenarios.csv
     └── fy27-q2-metric-snapshot.csv
 ```
 
