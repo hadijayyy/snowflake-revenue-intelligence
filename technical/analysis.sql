@@ -115,7 +115,7 @@ WITH scenario_inputs (
     FROM (VALUES
         ('Q2 actual', 'FY27 Q2', 1.491861, 1.491861, 'reported result', 'reference point'),
         ('Company forecast', 'FY27 Q3', 1.588, 1.593, 'management outlook', 'recommended baseline'),
-        ('Independent estimate', 'FY27 Q3', 1.640, 1.640, 'analyst hypothesis', 'upside only')
+        ('Illustrative upside', 'FY27 Q3', 1.640, 1.640, 'analyst assumption', 'upside only')
     ) AS values_table (
         scenario,
         period,
@@ -149,3 +149,31 @@ SELECT
     ) AS midpoint_lift_vs_actual_pct
 FROM latest_actual
 CROSS JOIN company_forecast;
+
+-- Query 3: expected recognition horizon (approximate, not fixed-cohort growth)
+-- Source: Q2 FY27 investor presentation, page 19; see rpo-recognition.csv.
+-- Shares are management's rounded percentages. Each quarter has its own
+-- forward 12-month window. This is not a causal demand test.
+WITH recognition_inputs (period_order, period, total_rpo_usd_m, next_12m_share_pct) AS (
+    VALUES (1, 'Q1 FY27', 9205.0, 50.0), (2, 'Q2 FY27', 9004.0, 54.0)
+),
+recognition_amounts AS (
+    SELECT *, total_rpo_usd_m * next_12m_share_pct / 100.0 AS implied_next_12m_usd_m
+    FROM recognition_inputs
+),
+recognition_comparison AS (
+    SELECT *,
+        LAG(total_rpo_usd_m) OVER (ORDER BY period_order) AS prior_total_rpo_usd_m,
+        LAG(implied_next_12m_usd_m) OVER (ORDER BY period_order) AS prior_next_12m_usd_m
+    FROM recognition_amounts
+)
+SELECT
+    period, total_rpo_usd_m, next_12m_share_pct,
+    ROUND(implied_next_12m_usd_m, 2) AS implied_next_12m_usd_m,
+    ROUND(total_rpo_usd_m - implied_next_12m_usd_m, 2) AS implied_later_usd_m,
+    ROUND((total_rpo_usd_m / NULLIF(prior_total_rpo_usd_m, 0) - 1) * 100, 1)
+        AS total_rpo_qoq_pct,
+    ROUND((implied_next_12m_usd_m / NULLIF(prior_next_12m_usd_m, 0) - 1) * 100, 1)
+        AS implied_next_12m_change_pct
+FROM recognition_comparison
+ORDER BY period_order;
