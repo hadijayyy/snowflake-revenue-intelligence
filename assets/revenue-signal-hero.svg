@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="680" viewBox="0 0 1280 680" fill="none">
+  <defs>
+    <linearGradient id="wash" x1="640" y1="0" x2="640" y2="680" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EAF9FC"/>
+      <stop offset="1" stop-color="#D8F0F5" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(650 310) rotate(90) scale(360 560)">
+      <stop stop-color="#9DE7F4" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#EAF9FC" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M46 0H0V46" stroke="#78CBDC" stroke-opacity=".13"/>
+    </pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#0A5369" flood-opacity=".14"/>
+    </filter>
+    <filter id="blur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="680" rx="32" fill="url(#wash)"/>
+  <rect width="1280" height="680" rx="32" fill="url(#grid)"/>
+  <ellipse cx="655" cy="320" rx="430" ry="265" fill="url(#glow)" filter="url(#blur)"/>
+
+  <g opacity=".68" stroke="#6BCADD" stroke-width="1.5">
+    <path d="M-30 548C186 370 362 344 535 413C726 489 856 507 1024 348C1117 260 1216 224 1322 251"/>
+    <path d="M-30 577C186 399 362 373 535 442C726 518 856 536 1024 377C1117 289 1216 253 1322 280" opacity=".72"/>
+    <path d="M-30 606C186 428 362 402 535 471C726 547 856 565 1024 406C1117 318 1216 282 1322 309" opacity=".48"/>
+  </g>
+
+  <g opacity=".58" stroke="#188FAF" stroke-linecap="round">
+    <path d="M640 70V184M583 102L697 168M583 168L697 102" stroke-width="4"/>
+    <path d="M622 80L640 70L658 80M622 174L640 184L658 174M583 125V102L603 90M677 164L697 152V129M583 145V168L603 180M677 90L697 102V125" stroke-width="2"/>
+  </g>
+  <circle cx="640" cy="127" r="31" fill="#C4F0F7" fill-opacity=".58"/>
+  <circle cx="640" cy="127" r="7" fill="#1EAFE0"/>
+
+  <g filter="url(#shadow)">
+    <rect x="176" y="208" width="928" height="348" rx="20" fill="#071F2B"/>
+    <rect x="176" y="208" width="928" height="43" rx="20" fill="#102F3B"/>
+    <path d="M176 231H1104" stroke="#31515B"/>
+    <circle cx="204" cy="229" r="5" fill="#EF716A"/><circle cx="222" cy="229" r="5" fill="#E7BC61"/><circle cx="240" cy="229" r="5" fill="#61C98A"/>
+    <text x="640" y="234" fill="#B3C7CC" font-family="Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle">REVENUE INTELLIGENCE / Q2 FY27</text>
+
+    <rect x="215" y="278" width="271" height="231" rx="12" fill="#0D2B38" stroke="#31515B"/>
+    <text x="241" y="310" fill="#8EA8AF" font-family="Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="1.3">PLANNING BASELINE</text>
+    <text x="241" y="363" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="46" font-weight="800" letter-spacing="-2.5">$1.59B</text>
+    <text x="241" y="392" fill="#A9C0C5" font-family="Arial, sans-serif" font-size="13">Company forecast midpoint</text>
+    <path d="M241 430H459" stroke="#31515B"/>
+    <text x="241" y="456" fill="#74D6ED" font-family="Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="1">NEXT REVIEW</text>
+    <text x="241" y="480" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="18" font-weight="800">Q3 result</text>
+
+    <rect x="520" y="278" width="545" height="231" rx="12" fill="#F7FCFC"/>
+    <text x="548" y="310" fill="#087EA7" font-family="Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="1.3">INDEXED OPERATING SIGNAL · Q1 FY27 = 100</text>
+    <line x1="548" y1="348" x2="1037" y2="348" stroke="#D8E8EA"/><line x1="548" y1="399" x2="1037" y2="399" stroke="#9BD4DF" stroke-dasharray="4 5"/><line x1="548" y1="450" x2="1037" y2="450" stroke="#D8E8EA"/>
+    <path d="M563 435C655 429 713 421 782 399C858 381 933 365 1020 337" stroke="#1EAFE0" stroke-width="4" stroke-linecap="round"/>
+    <path d="M563 441C653 431 713 397 782 376C855 410 932 405 1020 415" stroke="#B7832A" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="1020" cy="337" r="6" fill="#1EAFE0"/><circle cx="1020" cy="415" r="6" fill="#B7832A"/>
+    <text x="548" y="486" fill="#6A8187" font-family="Arial, sans-serif" font-size="10">PRODUCT REVENUE 111.8</text>
+    <text x="827" y="486" fill="#6A8187" font-family="Arial, sans-serif" font-size="10">CONTRACTED REVENUE 97.8</text>
+  </g>
+
+  <g opacity=".9">
+    <rect x="1000" y="112" width="166" height="64" rx="12" fill="#FFFFFF" stroke="#C5E6EC"/>
+    <text x="1022" y="137" fill="#6A8187" font-family="Arial, sans-serif" font-size="9" font-weight="700" letter-spacing="1">THE SIGNAL</text>
+    <text x="1022" y="159" fill="#087EA7" font-family="Arial, sans-serif" font-size="14" font-weight="800">Revenue ↑ / RPO ↓</text>
+  </g>
+</svg>
