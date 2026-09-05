@@ -1,4 +1,4 @@
 scenario,period,low_usd_b,high_usd_b,midpoint_usd_b,evidence_type,planning_role,decision_use,source_role
 q2_actual,FY27 Q2,1.491861,1.491861,1.491861,reported_result,reference_point,Anchor the next-quarter planning discussion,official disclosure
 company_forecast,FY27 Q3,1.588,1.593,1.5905,management_outlook,recommended_baseline,Use for operating plan and resource decisions,official disclosure
-independent_estimate,FY27 Q3,1.640,1.640,1.6400,analyst_hypothesis,upside_only,Test repeatability before changing the baseline,independent analysis
+illustrative_upside,FY27 Q3,1.640,1.640,1.6400,analyst_assumption,upside_only,Test repeatability and margins before raising fixed costs,illustrative scenario with no validated predictive model
