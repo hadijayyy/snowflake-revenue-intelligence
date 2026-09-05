@@ -6,6 +6,8 @@ The project turns public Snowflake disclosures into a clear planning recommendat
 
 **Live demo:** [snowflake-revenue-retention-intelli.vercel.app](https://snowflake-revenue-retention-intelli.vercel.app/)
 
+![Snowflake Revenue Intelligence dashboard preview](assets/dashboard-preview.svg)
+
 ## Executive question
 
 Should the next-quarter operating plan use the company forecast or the higher independent estimate as its baseline?
@@ -59,6 +61,8 @@ Ryan's broader analytics toolkit includes SQL, Python, Power BI, Tableau, and Ex
 
 ```text
 .
+├── assets/
+│   └── dashboard-preview.svg
 ├── index.html
 ├── README.md
 ├── technical/
