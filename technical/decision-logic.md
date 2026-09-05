@@ -1,34 +1,31 @@
 # Decision logic
 
-The dashboard turns the analysis into a small set of operating choices.
+## Reference plan
 
-## Baseline rule
+Use management's **$1.588–1.593B** Q3 FY27 product revenue guidance as the reference plan. The **$1.64B** case is an illustrative upside assumption, not a validated forecast or committed target.
 
-Use the official company forecast range of **$1.588–1.593B** as the FY27 Q3 planning baseline.
+## Evidence
 
-The independent **$1.64B** estimate remains a conditional upside scenario because it is a directional hypothesis from a short history.
+Product revenue grew 11.8% sequentially. Total RPO fell 2.2%, while the implied amount expected within each quarter's following 12 months increased approximately 5.6%. Investigate timing and conversion before inferring a demand problem.
 
-## Priority rule
+The 126% expansion metric and 828 large customers support attention to major accounts, but cannot identify individual intervention needs. Consider the 15.3% adjusted operating margin alongside the −17.0% GAAP operating margin.
 
-The sequential gap is the first priority:
+## Ranked proposed actions
 
-```text
-Product revenue:             +11.8% sequentially
-Contracted future revenue:    -2.2% sequentially
-```
+| Priority | Action | Proposed owner | Review condition |
+| --- | --- | --- | --- |
+| 1 · Before spend | Reconcile usage, renewal timing, and expected conversion before incremental capacity | Finance + Sales | Material usage shortfall or delayed renewals; reassess before Q3 results |
+| 2 · This quarter | Review expansion and renewal plans for major accounts | Customer Success + Sales | Falling usage or expansion; confirm with account-level data |
+| 3 · Before raising fixed costs | Review the bridge from adjusted to GAAP operating performance | Finance + Operations | Margin deterioration or rising recurring costs despite growth |
 
-This does not prove a problem. It identifies the next question for Finance and Sales: are bookings and pipeline keeping pace with usage and customer expansion?
+These are proposed responsibilities. Public data does not establish a spending amount, materiality threshold, or realized savings.
 
-## Operating triggers
+## Hypothetical Q3 outcome comparison
 
-| Reported Q3 result | Action |
-| --- | --- |
-| Below $1.588B | Revisit usage, pipeline, hiring, and resource assumptions |
-| $1.588–1.593B | Stay with the company-led operating plan |
-| Above $1.593B | Test whether acceleration is repeatable before resetting the baseline |
+| Q3 product revenue, USD B | Interpretation | Proposed response |
+| --- | --- | --- |
+| Below 1.588 | Below guidance | Review usage and renewals; revisit discretionary spend if the shortfall persists |
+| 1.588 through 1.593, inclusive | Within guidance | Keep the reference plan; review usage, renewals, and margins |
+| Above 1.593 | Above guidance | Test repeatability and margins before raising fixed costs |
 
-## Ownership
-
-- **Finance + Sales:** confirm whether new contracts are catching up.
-- **Customer Success + Sales:** protect renewals, usage, and expansion in large accounts.
-- **Finance + Operations:** prepare for upside without committing the operating plan to it prematurely.
+These are conditional responses, not a basis to change an operating plan from one public metric. Q2 actual is a historical reference. A slider does not establish predictive accuracy.
