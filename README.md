@@ -1,99 +1,88 @@
 # Snowflake Revenue Intelligence
 
-An executive-facing revenue and retention case study by [Ryan Hadi](https://www.linkedin.com/in/ryanhadi/).
+An interactive executive brief by [Ryan Hadi](https://www.linkedin.com/in/ryanhadi/), built from public Snowflake disclosures.
 
-The project turns public Snowflake disclosures into a clear planning recommendation. It separates what has already been reported, what management expects, and what an independent analyst hypothesis suggests.
+**[Open the live report](https://snowflake-revenue-retention-intelli.vercel.app/)**
 
-**Live demo:** [snowflake-revenue-retention-intelli.vercel.app](https://snowflake-revenue-retention-intelli.vercel.app/)
+## The business question
 
-![Snowflake Revenue Intelligence dashboard preview](assets/dashboard-preview.svg)
+Revenue is growing quickly. What should leadership fund next, and what evidence should change the plan?
 
-## Executive question
+The report connects public results to three proposed operating decisions. Quarterly detail, sources, calculations, and limitations are available on demand.
 
-Should the next-quarter operating plan use the company forecast or the higher independent estimate as its baseline?
+## The finding that changes the interpretation
+
+Q2 FY27 product revenue reached **$1.492B**, up **37% year over year** and **11.8% sequentially**. Existing customer revenue expansion was **126%**, and customers with more than $1M in trailing product revenue increased to **828**.
+
+Total remaining performance obligations (RPO) fell **2.2%** from Q1. That alone is an incomplete demand signal. Management's expected recognition share within the next 12 months rose from **50% to 54%**. Multiplying these rounded shares by each quarter's RPO implies approximately **$4.60B → $4.86B**, or **+5.6%**, in the respective near-term windows.
+
+The latter is an **analyst calculation**, not a separately reported growth rate. The 12-month horizon advances each quarter; these are not fixed contract cohorts. Renewal timing, contract duration, and other factors also affect RPO.
 
 ## Recommendation
 
-Use Snowflake's company forecast range of **$1.588–1.593B** as the FY27 Q3 planning baseline. Keep the **$1.64B** independent estimate as an upside scenario until a reported result validates it.
+Use management's **$1.588–1.593B** Q3 FY27 product revenue range as the reference plan. Stage additional spending against customer usage and renewal evidence, protect expansion in major accounts, and examine both GAAP and adjusted margins before increasing fixed costs.
 
-## What the analysis found
+The **$1.64B** value in the scenario tool is an illustrative upside assumption. No statistically validated predictive model or forecast accuracy is claimed.
 
-- Product revenue reached **$1.492B**, up **37% year over year**.
-- Product revenue increased **11.8% sequentially**, while contracted future revenue decreased **2.2% sequentially**.
-- Net revenue retention was **126%** and the number of customers above $1M reached **828**.
-- The key operating question is whether new contracts catch up with usage and expansion growth.
+## What the portfolio demonstrates
 
-## What this project demonstrates
+- Business framing: a focused question, a recommendation, and evidence that would change it.
+- Analytical judgment: separating recognized revenue, contracted revenue, and expected recognition timing.
+- Reproducibility: source inputs, runnable SQL, assumptions, and metric definitions.
+- Communication: professional plain English and ranked actions with proposed owners.
+- Frontend implementation: responsive layouts, accessible controls, native SVG charts, and a scenario tool.
 
-- Framing a business question before building a chart.
-- Defining metrics so reported revenue, contracted future revenue, and retention are not mixed.
-- Comparing an official company forecast with a separate analyst hypothesis.
-- Turning a signal into ranked priorities, owners, and decision triggers.
-- Making sources, assumptions, validation, and limitations visible.
+## Explore the evidence
 
-## Technical proof
+| Artifact | What it provides |
+| --- | --- |
+| [Methodology](technical/methodology.md) | Sources, formulas, rounding, interpretation, and limits |
+| [SQL analysis](technical/analysis.sql) | Growth comparisons, guidance midpoint, and near-term RPO calculation |
+| [Quarterly inputs](artifacts/fy27-q2-metric-snapshot.csv) | Five reported quarters of revenue, RPO, expansion, and large customers |
+| [RPO recognition inputs](artifacts/rpo-recognition.csv) | Quarter-end balances, rounded shares, and primary source |
+| [Scenario inputs](artifacts/forecast-scenarios.csv) | Actual, management guidance, and illustrative upside |
+| [Decision logic](technical/decision-logic.md) | Priorities, proposed owners, and review conditions |
+| [Metric definitions](technical/metric-definitions.md) | What each metric measures and cannot establish |
+| [Architecture](technical/architecture.md) | How the static report and analytical artifacts relate |
 
-The repository is intentionally inspectable rather than a screenshot-only showcase:
+## Experience and design
 
-- `technical/analysis.sql` reproduces the sequential-growth, year-over-year, Q1-index, and scenario calculations from the snapshot.
-- `artifacts/fy27-q2-metric-snapshot.csv` is the normalized metric input used by the analysis.
-- `artifacts/forecast-scenarios.csv` makes the actual, company forecast, and independent estimate explicit as different evidence types.
-- `technical/architecture.md` documents the source-to-decision flow and the production extension path.
+Snowflake-inspired blue and white styling meets a compact editorial layout:
 
-The SQL uses an inline `VALUES` block so it can be inspected or run without credentials. In a production setting, that block would be replaced by a governed warehouse table and scheduled validation checks.
+1. Product revenue trajectory and four operating indicators.
+2. A two-quarter contract chart explaining the recognition horizon.
+3. An interactive Q3 outcome comparison against management's guidance.
+4. Three ranked operating recommendations.
 
-## Project metadata
+Optional detail opens in place. Controls support keyboard interaction; the report includes reduced motion, mobile navigation, and print styling. Reported bars use zero baselines. The optional NRR line explicitly labels its 100–130% scale. Guidance is visually distinct from reported results.
+
+## Implementation
 
 | Field | Detail |
 | --- | --- |
 | Author | Ryan Hadi |
 | Role demonstrated | Data & BI Analyst |
-| Project type | Self-initiated public-data case study |
-| Audience | Finance, Sales, Operations, and leadership stakeholders |
-| Deliverable | Responsive interactive dashboard and executive readout |
-| Frontend | HTML, CSS, and JavaScript |
-| Analytical methods | Metric definition, sequential-growth comparison, scenario framing, directional forecasting |
-| Data boundary | Public Snowflake Investor Relations materials and SEC filing |
+| Project | Self-initiated public-data portfolio case study |
+| Audience | Finance, Sales, Customer Success, Operations, and leadership |
+| Frontend | HTML, CSS, JavaScript, and native SVG |
+| Hosting | Vercel |
+| Analytical artifact | PostgreSQL / DuckDB-compatible SQL |
+| Snapshot | Q2 FY27; quarter ended July 31, 2026; released September 2, 2026 |
 
-Ryan's broader analytics toolkit includes SQL, Python, Power BI, Tableau, and Excel. The project metadata above intentionally describes only what is represented in this repository and live demo.
-
-## Repository map
-
-```text
-.
-├── assets/
-│   └── dashboard-preview.svg
-├── index.html
-├── README.md
-├── technical/
-│   ├── analysis.sql
-│   ├── architecture.md
-│   ├── decision-logic.md
-│   ├── metric-definitions.md
-│   └── methodology.md
-└── artifacts/
-    ├── decision-triggers.csv
-    ├── forecast-scenarios.csv
-    └── fy27-q2-metric-snapshot.csv
-```
-
-## Run locally
-
-The demo is a static HTML page with no build step:
+This is a static snapshot with embedded data, not a live warehouse connection. No build step or package installation is required:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Open `http://localhost:8000` in a browser.
+Open `http://localhost:8000`. Texta and Lato fonts load from Snowflake's public website, with system fallbacks. Charts render locally without charting libraries.
 
-## Sources
+## Primary sources
 
-- [Snowflake Investor Relations — quarterly results](https://investors.snowflake.com/financials/quarterly-results/default.aspx)
-- [Snowflake FY27 Q2 investor presentation](https://investors.snowflake.com/files/doc_financials/2027/q2/Q2-FY2027-Investor-Presentation_vF.pdf)
-- [Snowflake FY27 Q2 SEC filing](https://www.sec.gov/Archives/edgar/data/1640147/000164014726000033/snow-20260902.htm)
-- [Official FY27 Q2 investor snapshot](https://s26.q4cdn.com/463892824/files/doc_financials/2027/q2/fy27q2-infographic-r03-2x-1.png)
+- [Q2 FY27 earnings release — SEC exhibit 99.1](https://www.sec.gov/Archives/edgar/data/1640147/000164014726000033/fy2027q2earnings.htm)
+- [Q2 FY27 investor presentation — RPO recognition shares on page 19](https://investors.snowflake.com/files/doc_financials/2027/q2/Q2-FY2027-Investor-Presentation_vF.pdf)
+- [September 2, 2026 Form 8-K](https://www.sec.gov/Archives/edgar/data/1640147/000164014726000033/snow-20260902.htm)
 
-## Scope and disclaimer
+## Scope
 
-This is an independent portfolio analysis using public disclosures. It is not internal Snowflake data, is not affiliated with or endorsed by Snowflake Inc., and is not investment advice. The independent estimate is a directional hypothesis, not a confidence interval or a promise.
+Independent portfolio analysis, not affiliated with or endorsed by Snowflake Inc. No internal customer data or realized business impact is claimed. Recommendations are proposed operating actions, not investment advice.
